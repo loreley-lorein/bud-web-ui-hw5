@@ -1,4 +1,4 @@
-function showTime() {
+function showDate() {
   const date = new Date();
   let h = date.getHours();
   let m = date.getMinutes();
@@ -9,15 +9,7 @@ function showTime() {
   s = s < 10 ? "0" + s : s;
 
   const time = h + ":" + m + ":" + s;
-  document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
 
-  setTimeout(showTime, 1000);
-}
-
-showTime();
-
-function showDate() {
   const today = new Date();
 
   const options = {
@@ -27,9 +19,10 @@ function showDate() {
 
   const now = today.toLocaleString("en-US", options);
 
-  document.getElementById("MyClockDisplay").innerText = now;
-  document.getElementById("MyClockDisplay").textContent = now;
+  const day = time + " " + now;
+  document.getElementById("MyClockDisplay").innerText = day;
+  document.getElementById("MyClockDisplay").textContent = day;
 
-  setTimeout(showTime, 1000);
+  setTimeout(showDate, 1000);
 }
 showDate();
